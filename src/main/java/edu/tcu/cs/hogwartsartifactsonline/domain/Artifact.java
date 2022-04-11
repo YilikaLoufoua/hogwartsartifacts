@@ -1,7 +1,9 @@
 package edu.tcu.cs.hogwartsartifactsonline.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 import java.io.Serializable;
 @Entity
@@ -11,6 +13,10 @@ public class Artifact implements Serializable {
     private String name;
     private String description;
     private String imageUrl;
+
+    @ManyToOne
+    @JsonIgnore
+    private Wizard owner;
 
     public Artifact() {}
 
@@ -46,5 +52,7 @@ public class Artifact implements Serializable {
         this.imageUrl = imageUrl;
     }
 
+    public Wizard getOwner() { return owner; }
 
+    public void setOwner(Wizard owner) { this.owner = owner; }
 }
