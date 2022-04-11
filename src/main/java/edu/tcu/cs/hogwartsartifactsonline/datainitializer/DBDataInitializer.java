@@ -1,10 +1,10 @@
 package edu.tcu.cs.hogwartsartifactsonline.datainitializer;
 
 import edu.tcu.cs.hogwartsartifactsonline.dao.ArtifactDao;
-import edu.tcu.cs.hogwartsartifactsonline.dao.UserDao;
+import edu.tcu.cs.hogwartsartifactsonline.dao.HAOUserDao;
 import edu.tcu.cs.hogwartsartifactsonline.dao.WizardDao;
 import edu.tcu.cs.hogwartsartifactsonline.domain.Artifact;
-import edu.tcu.cs.hogwartsartifactsonline.domain.User;
+import edu.tcu.cs.hogwartsartifactsonline.domain.HAOUser;
 import edu.tcu.cs.hogwartsartifactsonline.domain.Wizard;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -14,12 +14,12 @@ public class DBDataInitializer implements CommandLineRunner {
 
     private ArtifactDao artifactDao;
     private WizardDao wizardDao;
-    private UserDao userDao;
+    private HAOUserDao HAOUserDao;
 
-    public DBDataInitializer(ArtifactDao artifactDao, WizardDao wizardDao, UserDao userDao) {
+    public DBDataInitializer(ArtifactDao artifactDao, WizardDao wizardDao, HAOUserDao HAOUserDao) {
         this.artifactDao = artifactDao;
         this.wizardDao = wizardDao;
-        this.userDao = userDao;
+        this.HAOUserDao = HAOUserDao;
     }
 
     @Override
@@ -79,27 +79,30 @@ public class DBDataInitializer implements CommandLineRunner {
         wizardDao.save(w3);
         artifactDao.save(a6);
 
-        User u1 = new User();
+        HAOUser u1 = new HAOUser();
+        u1.setId("1250808601736515974");
         u1.setUsername("john");
         u1.setPassword("123456");
         u1.setEnabled(true);
         u1.setRoles("admin");
 
-        User u2 = new User();
+        HAOUser u2 = new HAOUser();
+        u2.setId("1250808601736515194");
         u2.setUsername("eric");
         u2.setPassword("648941");
         u2.setEnabled(true);
         u2.setRoles("user");
 
-        User u3 = new User();
+        HAOUser u3 = new HAOUser();
+        u3.setId("1250808601736515367");
         u3.setUsername("tom");
         u3.setPassword("395285");
         u3.setEnabled(false);
         u3.setRoles("user");
 
-        userDao.save(u1);
-        userDao.save(u2);
-        userDao.save(u3);
+        HAOUserDao.save(u1);
+        HAOUserDao.save(u2);
+        HAOUserDao.save(u3);
 
     }
 }

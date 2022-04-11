@@ -1,29 +1,26 @@
 package edu.tcu.cs.hogwartsartifactsonline.domain;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.io.Serializable;
 
 @Entity
-public class User implements Serializable {
+public class HAOUser implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private String id;
     private String username;
     private String password;
     private boolean enabled;
     private String roles;
 
-    public User() {}
+    public HAOUser() {}
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
