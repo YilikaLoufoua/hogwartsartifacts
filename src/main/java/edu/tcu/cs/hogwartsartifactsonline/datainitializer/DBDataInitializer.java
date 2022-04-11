@@ -1,8 +1,10 @@
 package edu.tcu.cs.hogwartsartifactsonline.datainitializer;
 
 import edu.tcu.cs.hogwartsartifactsonline.dao.ArtifactDao;
+import edu.tcu.cs.hogwartsartifactsonline.dao.UserDao;
 import edu.tcu.cs.hogwartsartifactsonline.dao.WizardDao;
 import edu.tcu.cs.hogwartsartifactsonline.domain.Artifact;
+import edu.tcu.cs.hogwartsartifactsonline.domain.User;
 import edu.tcu.cs.hogwartsartifactsonline.domain.Wizard;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -12,11 +14,12 @@ public class DBDataInitializer implements CommandLineRunner {
 
     private ArtifactDao artifactDao;
     private WizardDao wizardDao;
+    private UserDao userDao;
 
-
-    public DBDataInitializer(ArtifactDao artifactDao, WizardDao wizardDao) {
+    public DBDataInitializer(ArtifactDao artifactDao, WizardDao wizardDao, UserDao userDao) {
         this.artifactDao = artifactDao;
         this.wizardDao = wizardDao;
+        this.userDao = userDao;
     }
 
     @Override
@@ -74,5 +77,29 @@ public class DBDataInitializer implements CommandLineRunner {
         wizardDao.save(w1);
         wizardDao.save(w2);
         wizardDao.save(w3);
+        artifactDao.save(a6);
+
+        User u1 = new User();
+        u1.setUsername("john");
+        u1.setPassword("123456");
+        u1.setEnabled(true);
+        u1.setRoles("admin");
+
+        User u2 = new User();
+        u2.setUsername("eric");
+        u2.setPassword("648941");
+        u2.setEnabled(true);
+        u2.setRoles("user");
+
+        User u3 = new User();
+        u3.setUsername("tom");
+        u3.setPassword("395285");
+        u3.setEnabled(false);
+        u3.setRoles("user");
+
+        userDao.save(u1);
+        userDao.save(u2);
+        userDao.save(u3);
+
     }
 }

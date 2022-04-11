@@ -15,7 +15,6 @@ public class ArtifactService {
     private ArtifactDao artifactDao;
     private IdWorker idWorker;
 
-    // Spring will automatically inject an instance of ArtifactDao and an instance of IdWorker into this class
     public ArtifactService(ArtifactDao artifactDao, IdWorker idWorker) {
         this.artifactDao = artifactDao;
         this.idWorker = idWorker;

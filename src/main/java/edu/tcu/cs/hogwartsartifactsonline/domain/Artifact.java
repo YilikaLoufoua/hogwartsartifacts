@@ -18,7 +18,16 @@ public class Artifact implements Serializable {
     @JsonIgnore
     private Wizard owner;
 
-    public Artifact() {}
+    public Artifact() {
+    }
+
+    public Wizard getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Wizard owner) {
+        this.owner = owner;
+    }
 
     public String getId() {
         return id;
@@ -51,8 +60,4 @@ public class Artifact implements Serializable {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
-
-    public Wizard getOwner() { return owner; }
-
-    public void setOwner(Wizard owner) { this.owner = owner; }
 }

@@ -1,7 +1,7 @@
 package edu.tcu.cs.hogwartsartifactsonline.controller;
 
 import edu.tcu.cs.hogwartsartifactsonline.domain.Artifact;
-import edu.tcu.cs.hogwarts.domain.Result;
+import edu.tcu.cs.hogwartsartifactsonline.domain.Result;
 import edu.tcu.cs.hogwartsartifactsonline.domain.StatusCode;
 import edu.tcu.cs.hogwartsartifactsonline.service.ArtifactService;
 import org.springframework.web.bind.annotation.*;

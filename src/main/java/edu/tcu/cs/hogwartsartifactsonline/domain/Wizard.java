@@ -13,12 +13,12 @@ public class Wizard implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
+
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "owner")
     @JsonIgnore
     private List<Artifact> artifacts = new ArrayList<>();
 
-    public Wizard() {
-    }
+    public Wizard() {}
 
     public List<Artifact> getArtifacts() {
         return artifacts;
@@ -48,7 +48,6 @@ public class Wizard implements Serializable {
         artifact.setOwner(this);
         this.artifacts.add(artifact);
     }
-
     public void removeArtifact(Artifact artifact){
         artifact.setOwner(null);
         this.artifacts.remove(artifact);

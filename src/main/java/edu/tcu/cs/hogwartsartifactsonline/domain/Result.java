@@ -1,4 +1,4 @@
-package edu.tcu.cs.hogwarts.domain;
+package edu.tcu.cs.hogwartsartifactsonline.domain;
 
 /*
 used to encapsulate data prepared by server side, this object will be serialized to JSON before
@@ -8,7 +8,7 @@ public class Result {
     private boolean flag; //true: success, false: not success
     private Integer code; //return status code. e.g. 200
     private String message; // message
-    private Object data; //return the requested data, in this case, a PageBean object
+    private Object data; //return the requested data
 
     public Result() {
     }

@@ -1,6 +1,6 @@
 package edu.tcu.cs.hogwartsartifactsonline.controller;
 
-import edu.tcu.cs.hogwarts.domain.Result;
+import edu.tcu.cs.hogwartsartifactsonline.domain.Result;
 import edu.tcu.cs.hogwartsartifactsonline.domain.StatusCode;
 import edu.tcu.cs.hogwartsartifactsonline.domain.Wizard;
 import edu.tcu.cs.hogwartsartifactsonline.service.WizardService;
@@ -49,4 +49,6 @@ public class WizardController {
         service.assignArtifact(wizardId, artifactId);
         return new Result(true, StatusCode.SUCCESS, "Artifact Assignment Success");
     }
+
+
 }
